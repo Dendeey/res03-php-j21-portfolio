@@ -3,17 +3,17 @@
 {% block title %}Project index{% endblock %}
 
 {% block body %}
-    <h1>Project index</h1>
+    <h1>Administrateur</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Main_tech</th>
-                <th>Second_tech</th>
+                <th>Nom</th>
+                <th>Technologie principale</th>
+                <th>Technologie secondaire</th>
                 <th>Description</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +25,8 @@
                 <td>{{ project.secondTech }}</td>
                 <td>{{ project.description }}</td>
                 <td>
-                    <a href="{{ path('app_project_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('app_project_edit', {'id': project.id}) }}">edit</a>
+                    <a class="btn btn-warning" href="{{ path('app_project_show', {'id': project.id}) }}" role="button">Montrer</a>
+                    <a class="btn btn-success" href="{{ path('app_project_edit', {'id': project.id}) }}" role="button">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_project_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('app_project_new') }}" role="button" >Créer un projet</a>
 {% endblock %}

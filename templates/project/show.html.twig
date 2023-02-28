@@ -3,7 +3,7 @@
 {% block title %}Project{% endblock %}
 
 {% block body %}
-    <h1>Project</h1>
+    <h1>Projet</h1>
 
     <table class="table">
         <tbody>
@@ -12,15 +12,15 @@
                 <td>{{ project.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nom</th>
                 <td>{{ project.name }}</td>
             </tr>
             <tr>
-                <th>Main_tech</th>
+                <th>Technologie principale</th>
                 <td>{{ project.mainTech }}</td>
             </tr>
             <tr>
-                <th>Second_tech</th>
+                <th>Technologie secondaire</th>
                 <td>{{ project.secondTech }}</td>
             </tr>
             <tr>
@@ -30,9 +30,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_project_index') }}">back to list</a>
+    <a class="btn btn-secondary" role="button" href="{{ path('app_project_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_project_edit', {'id': project.id}) }}">edit</a>
+    <a class="btn btn-success" href="{{ path('app_project_edit', {'id': project.id}) }}" role="button">Modifier</a>
 
     {{ include('project/_delete_form.html.twig') }}
 {% endblock %}
